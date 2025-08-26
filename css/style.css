@@ -1,0 +1,41 @@
+body {
+    background-color: black;
+}
+
+.items__chest{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+}
+
+.mainpage{
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    min-height: 100vh; 
+}
+
+.mainpage__items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.item__text{
+    font-size: 20px;
+    text-transform: uppercase;
+    /* кровавый градиент внутри текста */
+    background-image: linear-gradient(to bottom, #2b0000 0%, #7a0000 40%, #b30000 60%, #ff3b3b 72%, #b30000 85%, #2b0000 100%);
+    background-size: 100% 120%;
+    background-repeat: no-repeat;
+    /* обрезаем фон по тексту */
+    -webkit-background-clip: text;
+    /* делаем текст прозрачным чтобы показать градиент */
+    -webkit-text-fill-color: transparent;
+}
+
+.one__item__text{
+    color: #FFFFFF;
+}
