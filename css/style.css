@@ -39,3 +39,10 @@ body {
 .one__item__text{
     color: #FFFFFF;
 }
+
+.information {
+    color: #fff;
+    top: 14px;
+    right: 14px;
+    position: fixed;
+}
