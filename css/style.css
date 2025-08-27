@@ -1,5 +1,29 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+
+*,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+a, a:link, a:visited  {
+        text-decoration: none;
+    }
+    
+a:hover  {
+        text-decoration: none;
+    }
+
 body {
     background-color: black;
+}
+
+img{
+    width: 400px;
 }
 
 .items__chest{
@@ -21,6 +45,10 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 20px; /* Вертикальные отступы между элементами внутри контейнера */
+    padding: 40px 20px; /* Отступы внутри контейнера, чтобы элементы не прилегали к краям */
+    max-width: 900px; /* Ограничиваем ширину для лучшей читабельности */
+    margin: 0 auto; /* Центрируем контейнер по горизонтали */
 }
 
 .item__text{
@@ -32,12 +60,52 @@ body {
     background-repeat: no-repeat;
     /* обрезаем фон по тексту */
     -webkit-background-clip: text;
+    background-clip: text; /* Стандартное свойство для кросс-браузерности */
     /* делаем текст прозрачным чтобы показать градиент */
     -webkit-text-fill-color: transparent;
 }
 
 .one__item__text{
     color: #FFFFFF;
+    font-size: 28px; /* Размер заголовка/основного текста */
+    font-weight: 700; /* Акцентируем текст */
+    text-align: center; /* Центрируем текст под изображением */
+    margin: 0; /* Сбрасываем дефолтные отступы */
+    padding: 4px 8px; /* Небольшие внутренние отступы */
+}
+
+/* Обёртка и изображение */
+.one__item__img{
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Центрируем изображение внутри обёртки */
+    margin-bottom: 8px; /* Отделяем изображение от текста */
+}
+
+.one__item__img img{
+    max-width: 360px; /* Ограничиваем размер изображения */
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px; /* Лёгкое скругление для эстетики */
+}
+
+.two__item__text{
+    color: #dcdcdc; /* Немного светлее, чем основной текст */
+    font-size: 18px; /* Размер подсказки/описания */
+    font-weight: 400;
+    margin-top: 8px; /* Отступ сверху, чтобы отделить от основного текста */
+}
+
+/* Warning: крупное центрированное предупреждение внутри текста */
+.warning{
+    color: #7a0000; /* Белый для контраста на тёмном фоне */
+    font-size: 48px; /* Размер для десктопа */
+    font-weight: 900;
+    text-align: center;
+    margin: 12px 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .information {
@@ -45,4 +113,156 @@ body {
     top: 14px;
     right: 14px;
     position: fixed;
+}
+
+.main__content{
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    min-height: 100vh;
+}
+
+.item__txt{
+    /* Централизованный заголовок/большой текст */
+    margin: 0 0 3rem 0; /* Отступ снизу для разделения секций */
+    color: #7a0000;
+    font-size: xxx-large;
+    font-weight: 700;
+    text-align: center; /* Центрируем текст по горизонтали */
+}
+
+.item__content__txt{
+color: #FFFFFF;
+font-size: 98px;
+font-weight: 500;
+}
+
+.item__content__btn{
+    /* Поведение элемента */
+    display: inline-block; /* Ведёт себя как кнопка: подстраивается под содержимое и принимает внешние отступы */
+    padding: 12px 16px; /* Внутренние отступы: увеличивают область клика */
+
+    /* Визуальная стилистика - сделать в стиле вариантов ответа */
+    background: white;
+    color: black; /* Белый текст */
+    font-weight: 700; /* Жирный текст для акцента */
+    text-transform: uppercase; /* Верхний регистр для читаемости и стиля */
+
+    /* Границы и тень для лёгкого объёма */
+    border: 2px solid rgba(255,255,255,0.06);
+    border-radius: 12px; /* Скругление углов */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6), inset 0 -2px 0 rgba(255,255,255,0.02);
+
+    /*  Расположение - центрируем кнопку и даём ограничение по размеру */
+    display: inline-flex; /* чтобы выравнивать содержимое по центру */
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto 0; /* Центрируем по горизонтали, небольшой отступ сверху */
+    max-width: 320spx; /* Немного шире чтобы выглядеть как вариант */
+    width: auto; /* Позволяет кнопке подстраиваться под контент */
+
+    /* Поведение при взаимодействии */
+    cursor: pointer; /* Курсор указывает на то, что элемент кликабельный */
+    user-select: none; /* Запрет выделения текста при быстром клике */
+
+    /* Плавные анимации для наведения и нажатия */
+    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.item__content__btn:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.7);
+    border-color: rgba(255,255,255,0.12);
+}
+
+.item__content__btn:active{ 
+    /* Визуальная отдача при нажатии */
+    transform: translateY(0); /* Возврат в исходное положение */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18); /* Меньшая тень при удержании */
+    background-color: #eaeaea; /* Немного темнее при нажатии */
+}
+
+.answer__option{
+    display: flex;
+    justify-content: center; /* Центрируем контейнер по горизонтали */
+    gap: 20px; /* Отступ между двумя вариантами */
+    width: 100%;
+    max-width: 700px; /* Ограничиваем общую ширину контейнера */
+    margin: 0 auto; /* Центрируем контейнер внутри родителя */
+}
+
+.item__answer__option{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 4px;
+    min-width: 220px; /* Минимальная ширина каждого варианта */
+    background: #e9e2d2;
+    color: #2a2a2a;
+    font-weight: 500;
+    border: 2px solid #0000;
+    border-radius: 0px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6), inset 0 -2px 0 rgba(255,255,255,0.02);
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.item__answer__option:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.7);
+    border-color: rgba(255,255,255,0.12);
+}
+
+.answer__option .option--primary{
+    background: linear-gradient(180deg, #7a0000 0%, #b30000 100%);
+}
+
+.answer__option .option--secondary{
+    background: linear-gradient(180deg, #2b2b2b 0%, #3a3a3a 100%);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px){
+    .mainpage__items{
+        gap: 14px;
+        padding: 20px 16px;
+        max-width: 100%;
+    }
+
+    .item__content__txt{
+        font-size: 21px;
+    }
+
+    .one__item__img img{
+        max-width: 260px; /* Меньше на мобильных */
+    }
+
+    .one__item__text{
+        font-size: 20px; /* Уменьшаем заголовок для компактности */
+        padding: 2px 6px;
+    }
+
+    .two__item__text{
+        font-size: 15px;
+    }
+
+    .item__txt{
+        font-size: xx-large; /* Уменьшаем большой текст на мобильных */
+        margin-bottom: 2rem;
+    }
+
+    .item__content__btn{
+        width: 90%;
+        max-width: 227px;
+        padding: 10px 12px;
+        margin: 0.8rem auto 0; /* центрируем и уменьшаем верхний отступ */
+    }
+
+    /* Мобильная версия для Warning */
+    .warning{
+        font-size: 32px;
+        margin: 8px 0;
+    }
 }
