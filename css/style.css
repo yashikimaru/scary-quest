@@ -157,7 +157,7 @@ font-weight: 500;
     display: inline-flex; /* чтобы выравнивать содержимое по центру */
     align-items: center;
     justify-content: center;
-    margin: 2rem auto 0; /* Центрируем по горизонтали, небольшой отступ сверху */
+    margin: 2rem 0px 0px 33rem; /* Центрируем по горизонтали, небольшой отступ сверху */
     max-width: 320spx; /* Немного шире чтобы выглядеть как вариант */
     width: auto; /* Позволяет кнопке подстраиваться под контент */
 
@@ -257,7 +257,7 @@ font-weight: 500;
         width: 90%;
         max-width: 227px;
         padding: 10px 12px;
-        margin: 0.8rem auto 0; /* центрируем и уменьшаем верхний отступ */
+        margin: 15px 0px 0px 6rem; /* центрируем и уменьшаем верхний отступ */
     }
 
     /* Мобильная версия для Warning */
